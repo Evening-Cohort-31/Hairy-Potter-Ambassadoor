@@ -2,7 +2,7 @@
 import { makePottery } from "./PotteryWheel.js"
 import { firePottery } from "./Kiln.js"
 import { toSellOrNotToSell } from "./PotteryCatalog.js"
-import { usePottery } from "./PotteryCatalog.js"
+import { PotteryList } from "./PotteryList.js"
 
 // Make 5 pieces of pottery at the wheel
 let mug = makePottery("Mug", 1, 5)
@@ -41,7 +41,7 @@ console.log(...firedArray)
 // Determine which ones should be sold, and their price
 firedArray.map((pottery) => toSellOrNotToSell(pottery))
 
-console.log(...usePottery())
-
 // Invoke the component function that renders the HTML list
+const potteryHtml = PotteryList();
 
+document.querySelector(".potteryList").innerHTML = potteryHtml

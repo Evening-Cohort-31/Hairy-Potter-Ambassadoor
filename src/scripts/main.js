@@ -30,7 +30,7 @@ let firedArray = [firedMug, firedPlate, firedBowl, firedVase, firedPot]
 
 // Fire each piece of pottery in the kiln
 // Loop through the unfired pottery, providing a random temperature and assigning the returned object to the fired variables. 
-unfiredArray.map((pottery, index) => {
+unfiredArray.forEach((pottery, index) => {
     pottery = firePottery(pottery, Math.floor(Math.random() * 3000))
     firedArray[index] = pottery
 })
@@ -39,7 +39,7 @@ unfiredArray.map((pottery, index) => {
 console.log(...firedArray)
 
 // Determine which ones should be sold, and their price
-firedArray.map((pottery) => toSellOrNotToSell(pottery))
+firedArray.forEach((pottery) => toSellOrNotToSell(pottery))
 
 // Invoke the component function that renders the HTML list
 const potteryHtml = PotteryList();
